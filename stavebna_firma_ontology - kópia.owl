@@ -1,0 +1,890 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#"
+     xml:base="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma"/>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasCustomer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionCompany"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Customer"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionCompany"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionCompany"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasSiteManager">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#SiteManager"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasDesigner">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Designer"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#suppliesMaterial">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Supplier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#belongsToProject">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+    </owl:ObjectProperty>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatype Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#name"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionCompany">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasCustomer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#SiteManager">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Designer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ResidentialProject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Architect">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#CommercialProject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasCustomer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionWorker">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#belongsToProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Electrician">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#BuildingProject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionWorker"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Plumber">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ResidentialProject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionWorker"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Customer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Supplier">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#suppliesMaterial"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#suppliesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#BuildingProject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ResidentialProject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#BuildingProject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamilyHouse">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2026</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ResidentialProject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ApartmentBuilding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2026</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ResidentialProject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#CommercialProject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#BuildingProject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#OfficeBuilding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2026</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#CommercialProject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#IndustrialProject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2026</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#BuildingProject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Reconstruction">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Building"/>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Concrete">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Brick">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Steel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Wood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Insulation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#belongsToProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Excavator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Crane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Loader">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Truck">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionPhase"/>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Planning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionPhase"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Foundation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionPhase"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#StructuralWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionPhase"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FinishingWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionPhase"/>
+    </owl:Class>
+
+    <!-- Restrictions and class definitions, following the structure of the supplied example -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#BuildingProject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasCustomer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasSiteManager"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#SiteManager"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#SiteManager">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasProject"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionWorker">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#belongsToProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#worksOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Concrete">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#suppliesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Supplier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#belongsToProject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- Example project with concrete restrictions, analogous to the supplied ontology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamilyHouseExample">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamilyHouse"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Concrete"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Brick"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMachine"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Excavator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionWorker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2026</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- Disjointness between top-level classes -->
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionCompany">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasCustomer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#hasEmployee"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Employee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Person">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Project">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionPhase">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ConstructionMachine"/>
+    </owl:Class>
+
+    <!-- Additional Materials -->
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Glass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Material"/>
+    </owl:Class>
+
+    <!-- Subclasses of Materials with disjointness -->
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Concrete">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Wood"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Glass"/>
+    </owl:Class>
+
+    <!-- Equivalent Classes based on year (similar to art periods) -->
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ProjectPeriod"/>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ModernProject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ProjectPeriod"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#HistoricalProject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1950</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ProjectPeriod"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#MidCenturyProject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1950</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ProjectPeriod"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FutureProject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2027</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ProjectPeriod"/>
+    </owl:Class>
+
+    <!-- Union based Equivalent Classes for roles -->
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ManagementRole">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#SiteManager"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Architect"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ManualWorker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Electrician"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Plumber"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+    <!-- Specific Projects (similar to Famous Pieces of Art) -->
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamousProject"/>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#EmpireStateBuilding">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamousProject"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#OfficeBuilding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Steel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1931</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#EuroveaTower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamousProject"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#ApartmentBuilding"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Concrete"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#year"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#WoodenHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#FamilyHouse"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#usesMaterial"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/veron/ontologies/2026/9/stavebna-firma#Wood"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+</rdf:RDF>
